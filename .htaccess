@@ -1,0 +1,10 @@
+Options +FollowSymlinks -MultiViews
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+
+RewriteRule ^(.*)/(.*)$ $1.php?prm=$2 [L,NC]
+RewriteRule ^/(.*).php$ $1.php [L,NC]
+
